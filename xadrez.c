@@ -12,7 +12,7 @@ void torreRecursiva(int posicao, int limite){
 
 void bispoRecursivo(int posVertical, int posHorizontal, int limite){
     if (posVertical > limite || posHorizontal > limite) return;
-    printf("\nBispo está naposição: %d, %d\n\n", posVertical, posHorizontal);
+    printf("\nBispo está na posição: %d, %d\n\n", posVertical, posHorizontal);
     for (int x = posHorizontal + 1; x <= limite; x++){
     printf("Bispo em: %d, %d\n", posVertical, x);
     }
@@ -103,7 +103,7 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    printf("\n\n### Mocimentos Recursivos/Complexos ###\n\n");
+    printf("\n\n### Movimentos Recursivos/Complexos ###\n\n");
     printf("### Torre Recursiva ###\n");
     torreRecursiva(1, tabuleiro);
 
