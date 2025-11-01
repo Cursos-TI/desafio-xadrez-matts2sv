@@ -4,6 +4,43 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void torreRecursiva(int posicao, int limite){
+    if (posicao > limite) return;
+    printf("Torre está na posição: %d, 1\n", posicao);
+    torreRecursiva(posicao + 1, limite);
+}
+
+void bispoRecursivo(int posVertical, int posHorizontal, int limite){
+    if (posVertical > limite || posHorizontal > limite) return;
+    printf("\nBispo está naposição: %d, %d\n\n", posVertical, posHorizontal);
+    for (int x = posHorizontal + 1; x <= limite; x++){
+    printf("Bispo em: %d, %d\n", posVertical, x);
+    }
+    bispoRecursivo(posVertical + 1, posHorizontal + 1, limite);
+}
+
+void rainhaRecursiva(int posicaoR, int limite){
+    if(posicaoR < limite) return;
+    printf("Rainha está em: %d, 1\n", posicaoR);
+    rainhaRecursiva(posicaoR - 1, limite);
+}
+
+void cavalo(){
+    int cavaloVertical = 0, cavaloHorizontal = 0;
+
+    printf("\n### Movimentação do Cavalo###\n\n");
+    for(cavaloVertical = 1; cavaloVertical <= 2; cavaloVertical++){
+        printf("Cavalo para cima\n");
+
+        for (cavaloHorizontal = 1; cavaloVertical == 2 && cavaloHorizontal <= 1; cavaloHorizontal++){
+            printf("Cavalo para a Direita\n");
+            break;
+        }
+
+        if (cavaloVertical == 1) continue;
+    }
+}
+
 int main() {
 
     // Nível Novato - Movimentação das Peças
@@ -65,6 +102,19 @@ int main() {
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
+
+    printf("\n\n### Mocimentos Recursivos/Complexos ###\n\n");
+    printf("### Torre Recursiva ###\n");
+    torreRecursiva(1, tabuleiro);
+
+    printf("\n\n### Bispo Recursivo ###\n\n");
+    bispoRecursivo(1, 1, tabuleiro);
+
+    printf("\n\n### Rainha Recursiva ###\n\n");
+    rainhaRecursiva(tabuleiro, 1);
+
+    cavalo();
+
 
     return 0;
 }
